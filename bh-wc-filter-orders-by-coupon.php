@@ -212,3 +212,10 @@ add_action( 'plugins_loaded', 'wc_filter_orders_by_coupon' );
 function wc_filter_orders_by_coupon() {
 	return WC_Filter_Orders_By_Coupon::instance();
 }
+
+
+//add_action( 'before_woocommerce_init', function() {
+//	if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+//		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', plugin_basename( __FILE__ ), true );
+//	}
+//} );
