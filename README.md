@@ -1,7 +1,7 @@
 ## WooCommerce Filter Orders by Coupon
 
  - Requires WordPress 3.8+, WooCommerce 2.2+
- - Contributors: [Beka Rice](http://github.com/bekarice), [SkyVerge](http://github.com/skyverge/)
+ - Contributors: [Beka Rice](http://github.com/bekarice), [SkyVerge](http://github.com/skyverge/), [Brian Henry](https://BrianHenry.ie)
  - Like this? [We always appreciate donations](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+Filter+Orders)
  - Current version: 1.1.0
  - License: [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html)
@@ -14,7 +14,44 @@ While you can search for the coupon used, this isn't ideal to find orders that h
 
 Only coupons that are "published" (no drafts) will be available in the filtering dropdown.  If you have no published coupons, this dropdown will not show.
 
+### Testing
+
+The test dependencies require Node v12, so always run `nvm use` before any commands. Install the dependencies with:
+
+``bash
+nvm use
+npm install
+```
+
+To run the tests:
+
+```
+nvm use
+npm run-script docker:up
+npm run-script test:e2e
+```
+
+To enable and migrate the existing orders to HPOS:
+
+```
+nvm use
+npm run-script docker:ssh
+
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+mv wp-cli.phar /usr/local/bin/wp
+
+wp option set woocommerce_feature_custom_order_tables_enabled yes --allow-root
+wp wc cot sync --allow-root
+```
+
+This worked with no changes to the code.
+
 ### Changelog
+
+**2023.03.15**
+
+* Added HPOS tests.
 
 **2017.06.27 - version 1.1.0**
  * Feature: Add support for GitHub Updater
