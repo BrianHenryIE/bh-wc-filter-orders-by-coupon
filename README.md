@@ -51,7 +51,7 @@ wp option get woocommerce_feature_custom_order_tables_enabled --allow-root
 wp wc cot sync --allow-root
 ```
 
-This worked with no changes to the code.
+The filter no longer appears on the order page.
 
 ### Changelog
 
