@@ -41,7 +41,13 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
 
+# This said it worked
+wp option set woocommerce_custom_orders_table_enabled yes --allow-root
 wp option set woocommerce_feature_custom_order_tables_enabled yes --allow-root
+
+wp option get woocommerce_custom_orders_table_enabled --allow-root
+wp option get woocommerce_feature_custom_order_tables_enabled --allow-root
+
 wp wc cot sync --allow-root
 ```
 
