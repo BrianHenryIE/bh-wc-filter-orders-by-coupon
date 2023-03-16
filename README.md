@@ -18,14 +18,14 @@ Only coupons that are "published" (no drafts) will be available in the filtering
 
 The test dependencies require Node v12, so always run `nvm use` before any commands. Install the dependencies with:
 
-``bash
+```bash
 nvm use
 npm install
 ```
 
 To run the tests:
 
-```
+```bash
 nvm use
 npm run-script docker:up
 npm run-script test:e2e
@@ -33,7 +33,7 @@ npm run-script test:e2e
 
 To enable and migrate the existing orders to HPOS:
 
-```
+```bash
 nvm use
 npm run-script docker:ssh
 
