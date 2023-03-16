@@ -3,12 +3,12 @@
  * Plugin Name: Filter WooCommerce Orders by Coupon
  * Plugin URI: http://www.skyverge.com/product/woocommerce-filter-orders/
  * Description: Adds the ability to filter orders by coupon used.
- * Author: SkyVerge
- * Author URI: http://www.skyverge.com/
+ * Author: SkyVerge, BrianHenryIE
+ * Author URI: http://www.BrianHenry.ie
  * Version: 1.1.0
- * Text Domain: wc-filter-orders
+ * Text Domain: bh-wc-filter-orders-to-coupon
  *
- * GitHub Plugin URI: bekarice/woocommerce-filter-orders/
+ * GitHub Plugin URI: brianhenryie/bh-wc-filter-orders-to-coupon
  * GitHub Branch: master
  *
  * Copyright: (c) 2015-2017 SkyVerge, Inc. (info@skyverge.com)
@@ -16,7 +16,7 @@
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
- * @package   WC-Filter-Orders-by-Coupon
+ * @package   brianhenryie/bh-wc-filter-orders-to-coupon
  * @author    SkyVerge
  * @category  Admin
  * @copyright Copyright (c) 2015-2017, SkyVerge, Inc.
@@ -92,7 +92,7 @@ add_action( 'plugins_loaded', 'wc_filter_orders_by_coupon' );
 
 				<select name="_coupons_used" id="dropdown_coupons_used">
 					<option value="">
-						<?php esc_html_e( 'Filter by coupon used', 'wc-filter-orders' ); ?>
+						<?php esc_html_e( 'Filter by coupon used', 'bh-wc-filter-orders-to-coupon' ); ?>
 					</option>
 					<?php foreach ( $coupons as $coupon ) : ?>
 						<option value="<?php echo esc_attr( $coupon->post_title ); ?>" <?php echo esc_attr( isset( $_GET['_coupons_used'] ) ? selected( $coupon->post_title, $_GET['_coupons_used'], false ) : '' ); ?>>
@@ -156,7 +156,7 @@ add_action( 'plugins_loaded', 'wc_filter_orders_by_coupon' );
 	 */
 	public function load_translation() {
 		// localization
-		load_plugin_textdomain( 'wc-filter-orders', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages' );
+		load_plugin_textdomain( 'bh-wc-filter-orders-to-coupon', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 
@@ -184,7 +184,7 @@ add_action( 'plugins_loaded', 'wc_filter_orders_by_coupon' );
 	 */
 	public function __clone() {
 		/* translators: Placeholders: %s - plugin name */
-		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot clone instances of %s.', 'wc-filter-orders' ), 'Filter WC Orders by Coupon' ), '1.1.0' );
+		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot clone instances of %s.', 'bh-wc-filter-orders-to-coupon' ), 'Filter WC Orders by Coupon' ), '1.1.0' );
 	}
 
 
@@ -195,7 +195,7 @@ add_action( 'plugins_loaded', 'wc_filter_orders_by_coupon' );
 	 */
 	public function __wakeup() {
 		/* translators: Placeholders: %s - plugin name */
-		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot unserialize instances of %s.', 'wc-filter-orders' ), 'Filter WC Orders by Coupon' ), '1.1.0' );
+		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot unserialize instances of %s.', 'bh-wc-filter-orders-to-coupon' ), 'Filter WC Orders by Coupon' ), '1.1.0' );
 	}
 
 

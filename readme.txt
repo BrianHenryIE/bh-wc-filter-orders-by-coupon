@@ -53,7 +53,7 @@ Sorry, this functionality isn't available. This plugin is simply meant to be an 
 = Can I translate this in my language? =
 Yep! There's only one string to translate, but you can do so :). The coupon names are pulled directly from your coupon list, so they can be translated there.
 
-The text domain to use is `wc-filter-orders`.
+The text domain to use is `bh-wc-filter-orders-to-coupon`.
 
 = This is handy! Can I contribute? =
 Yes you can! Join in on our [GitHub repository](https://github.com/bekarice/woocommerce-filter-orders/) and submit a pull request :)
